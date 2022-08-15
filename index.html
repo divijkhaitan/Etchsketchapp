@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">Etch-a-Sketch</div>
+            <form>
+                <div style="text-align: center;">
+                <label for="boxno">Number of Boxes</label>
+                </div>
+                <span>
+                    <input type="number" id="boxno" name="boxno" min="1" max="100" required>
+                    <button class="btn" type="button">Change</button>
+                </span>
+            </form>
+            <span class="widget">
+                <button class="clear">Clear</button>
+                <button class="rgb">RGB</button>
+                <button class="eraser">Erase</button>
+            </span>
+            <div class="divcont"></div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
