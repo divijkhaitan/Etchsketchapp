@@ -1,15 +1,52 @@
 {
-    "name": "etchsketchapp",
-    "version": "1.0.0",
-    "description": "Test app made to get familiar with electron",
-    "main": "main.js",
-    "scripts": {
-      "start": "electron ."
-    },
-    "author": "Divij Khaitan",
-    "license": "ISC",
-    "devDependencies": {
-      "electron": "^20.0.2"
+  "name": "etchsketchapp",
+  "version": "1.0.0",
+  "description": "Test app made to get familiar with electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "make": "electron-forge make",
+    "package": "electron-forge package"
+  },
+  "author": "Divij Khaitan",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.65",
+    "@electron-forge/maker-deb": "^6.0.0-beta.65",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.65",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.65",
+    "@electron-forge/maker-zip": "^6.0.0-beta.65",
+    "electron": "^20.0.2"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "etchsketchapp"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin","win32"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+        
+      ]
     }
   }
-  
+}
